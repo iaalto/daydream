@@ -1,6 +1,7 @@
 import psycopg2
 from src.poi.sound import SoundPoi
 
+
 class PostGreConnector:
     """Handles queries to PostGreSQL database."""
     def __init__(self, dbname, host, user, password):
@@ -13,7 +14,10 @@ class PostGreConnector:
     def connect(self):
         """Connect to PostGreSQL database."""
         try:
-            self.conn = psycopg2.connect(dbname='daydream', host='localhost', user='daydream', password='daydream')
+            self.conn = psycopg2.connect(dbname=self.dbname,
+                                         host=self.host,
+                                         user=self.user,
+                                         password=self.password)
         except:
             print("I am unable to connect to the database")
 

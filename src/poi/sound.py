@@ -1,5 +1,6 @@
 from src.poi.abstract import AbstractPoi
 
+
 class SoundPoi(AbstractPoi):
     """Point of interest containing audio.
 

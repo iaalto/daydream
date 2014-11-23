@@ -1,5 +1,6 @@
 import abc
 
+
 class AbstractPoi:
     """Abstract class for Points Of Interest (POI)."""
     __metaclass__ = abc.ABCMeta
