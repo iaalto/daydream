@@ -1,11 +1,4 @@
-from abc import ABCMeta
-
-class AbstractPoi:
-    """Abstract class for Points Of Interest (POI).
-
-    """
-    __metaclass__ = ABCMeta
-
+from src.poi.abstract import AbstractPoi
 
 class SoundPoi(AbstractPoi):
     """Point of interest containing audio.
@@ -19,31 +12,31 @@ class SoundPoi(AbstractPoi):
         :param location: Location of point of interest
         :param content: Pointer to audio content
         """
-        pass
+        super().__init__(location, content)
 
     def render(self):
-        """Renders a visual representation of POI.
-
-        """
-        pass
+        """Renders a visual representation of POI."""
+        print('Location: ' + self.location)
+        print('Content: ' + self.content)
 
     def play(self):
-        """Play the audio content.
-
-        :return:
-        """
+        """Play the audio content."""
         pass
 
     def pause(self):
-        """Pause the audio content.
-
-        :return:
-        """
+        """Pause the audio content."""
         pass
 
     def stop(self):
-        """Stop audio content.
-
-        :return:
-        """
+        """Stop audio content."""
         pass
+
+    @property
+    def location(self):
+        """Return location."""
+        return self._location
+
+    @property
+    def content(self):
+        """ Return content."""
+        return self._content
