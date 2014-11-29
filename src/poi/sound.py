@@ -7,16 +7,20 @@ class SoundPoi(AbstractPoi):
     This class contains speech, music or other audio.
     """
 
-    def __init__(self, location, content):
+    def __init__(self, poi_id, poi, location, content):
         """Initialize a new sound point of interest.
 
+        :param poi_id: Database ID for the object. Database returns it when saved, initially None.
+        :param poi: Description for point of interest
         :param location: Location of point of interest
         :param content: Pointer to audio content
         """
-        super().__init__(location, content)
+        super().__init__(poi_id, poi, location, content)
 
     def render(self):
         """Renders a visual representation of POI."""
+        print('POI ID: ' + self.poi_id)
+        print('Description: ' + self.poi)
         print('Location: ' + self.location)
         print('Content: ' + self.content)
 
